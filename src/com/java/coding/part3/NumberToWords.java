@@ -10,57 +10,64 @@ public class NumberToWords {
 
         if(number < 0)
             System.out.println("Invalid Value");
-
-        while(number > 0) {
-            int rem = number % 10;
-            switch (rem) {
-                case 1:
-                    out += "One,";
-                    break;
-                case 2:
-                    out += "Two,";
-                    break;
-                case 3:
-                    out += "Three,";
-                    break;
-                case 4:
-                    out += "Four,";
-                    break;
-                case 5:
-                    out += "Five,";
-                    break;
-                case 6:
-                    out += "Six,";
-                    break;
-                case 7:
-                    out += "Seven,";
-                    break;
-                case 8:
-                    out += "Eight,";
-                    break;
-                case 9:
-                    out += "Nine,";
-                    break;
-                default:
+        else if(number == 0)
+            System.out.println("Zero");
+        else {
+            while (number > 0) {
+                int rem = number % 10;
+                switch (rem) {
+                    case 0:
+                        out += "Zero,";
+                        break;
+                    case 1:
+                        out += "One,";
+                        break;
+                    case 2:
+                        out += "Two,";
+                        break;
+                    case 3:
+                        out += "Three,";
+                        break;
+                    case 4:
+                        out += "Four,";
+                        break;
+                    case 5:
+                        out += "Five,";
+                        break;
+                    case 6:
+                        out += "Six,";
+                        break;
+                    case 7:
+                        out += "Seven,";
+                        break;
+                    case 8:
+                        out += "Eight,";
+                        break;
+                    case 9:
+                        out += "Nine,";
+                        break;
+                    default:
+                }
+                number /= 10;
             }
-            number /= 10;
         }
 
         String[] str = out.split(",");
 
-        for(String data : str)
-            System.out.print(data + " ");
+        for(int i=str.length-1; i>=0; i--)
+            System.out.print(str[i] + " ");
+        System.out.println();
     }
 
     public static int reverse(int number) {
 
         if(number < 0) {
             number *= -1;
-            StringBuilder sb = new StringBuilder(number).reverse();
+            StringBuilder sb = new StringBuilder(number + "").reverse();
             return Integer.parseInt(new String(sb)) * -1;
         }
         else {
-            StringBuilder sb = new StringBuilder(number).reverse();
+            StringBuilder sb = new StringBuilder(number + "").reverse();
             return Integer.parseInt(new String(sb));
         }
 
