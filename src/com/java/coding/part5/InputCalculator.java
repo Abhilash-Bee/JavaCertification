@@ -10,7 +10,7 @@ public class InputCalculator {
         int count = 0, sum = 0;
         while (scan.hasNextInt()) {
             int number = scan.nextInt();
-            sum += Integer.parseInt(number + "");
+            sum += number;
             count++;
         }
         System.out.println("SUM = " + sum + " AVG = " + Math.round((float)sum/count));
