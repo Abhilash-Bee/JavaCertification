@@ -6,6 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Scanner scan = new Scanner(System.in);
+
         //VipCustomer Class Object
         VipCustomer vipCustomer = new VipCustomer();
         System.out.println(vipCustomer.getName());
@@ -26,7 +28,6 @@ public class Main {
 
 
         //Wall Class Object
-        Scanner scan = new Scanner(System.in);
         Wall defaultConstructors = new Wall();
         System.out.println(defaultConstructors.getWidth());
         System.out.println(defaultConstructors.getHeight());
@@ -36,6 +37,16 @@ public class Main {
         System.out.println(wall.getWidth());
         System.out.println(wall.getHeight());
         System.out.println(wall.getArea());
+
+
+        //Point Class Object
+        Point first = new Point(6, 5);
+        Point second = new Point(3, 1);
+        System.out.println(first.distance());
+        System.out.println();
+        System.out.println(first.distance(second));
+        System.out.println();
+        System.out.println(first.distance(2, 2));
 
     }
 
