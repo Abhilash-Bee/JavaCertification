@@ -1,5 +1,7 @@
 package com.javaarrays.arrays;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Scanner;
 
 public class MinimumElement {
@@ -11,7 +13,7 @@ public class MinimumElement {
         return scan.nextInt();
     }
 
-    public static int[] readElements(int sizeOfArray) {
+    public static int @NotNull [] readElements(int sizeOfArray) {
         System.out.println("Enter " + sizeOfArray + " array elements: ");
         int[] array = new int[sizeOfArray];
         for(int i=0; i<sizeOfArray; i++)
@@ -20,7 +22,7 @@ public class MinimumElement {
         return array;
     }
 
-    public static int findMin(int[] array) {
+    public static int findMin(int @NotNull [] array) {
         int min = Integer.MAX_VALUE;
         for (int data : array) {
             min = Math.min(min, data);
@@ -32,7 +34,7 @@ public class MinimumElement {
 
         int sizeOfArray = readInteger();
         int[] minArray = readElements(sizeOfArray);
-        System.out.println(findMin(minArray));
+        System.out.println("The minimum element in the array is: " + findMin(minArray));
 
     }
 
