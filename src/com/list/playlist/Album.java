@@ -4,15 +4,17 @@ import java.util.ArrayList;
 
 public class Album {
 
+    private String albumName;
     private static ArrayList<Song> album;
 
-    public Album() {
+    public Album(String albumName) {
+        this.albumName = albumName;
         album = new ArrayList<>();
     }
 
     public boolean addAlbum(String title, String duration) {
         Song checkAlbum = new Song(title, duration);
-        if(findSong(checkAlbum))
+        if(findSong(checkAlbum) >= 0)
             return false;
         else {
             album.add(checkAlbum);
@@ -22,22 +24,24 @@ public class Album {
 
     public boolean removeAlbum(String title, String duration) {
         Song checkAlbum = new Song(title, duration);
-        if(findSong(checkAlbum)) {
-            album.remove(checkAlbum);
+        int removeIndex = findSong((checkAlbum));
+        if(removeIndex >= 0) {
+            album.remove(removeIndex);
             return true;
         }
         else
             return false;
     }
 
-    public static boolean findSong(Song checkSong) {
+    public static int findSong(Song checkSong) {
         ArrayList<Song> checkAlbums = getAlbum();
-        for (Song checkEachSong : checkAlbums) {
-            if (checkEachSong.getTitle().equals(checkSong.getTitle()) &&
-                    checkEachSong.getDuration().equals(checkSong.getDuration()))
-                return true;
+        for (int i=0; i<checkAlbums.size(); i++) {
+            Song check = checkAlbums.get(i);
+            if (check.getTitle().equals(checkSong.getTitle()) &&
+                    check.getDuration().equals(checkSong.getDuration()))
+                return i;
         }
-        return false;
+        return -1;
     }
 
     public static ArrayList<Song> getAlbum() {

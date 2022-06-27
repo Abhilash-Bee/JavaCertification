@@ -2,34 +2,31 @@ package com.list.playlist;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.ListIterator;
 import java.util.Scanner;
 
 public class Main {
 
     private static Scanner scan = new Scanner(System.in);
-    private static Album album = new Album();
+    private static Album album = new Album("Devotion");
     private static Playlist playlist = new Playlist();
-
-    private static ListIterator<Song> songListIterator = playlist.getPlaylists().listIterator();
 
     public static void main(String[] args) {
 
+        printOptions();
         while (true) {
-            printOptions();
+            System.out.print("Enter your choice in the album: ");
             int choice = scan.nextInt();
 
             switch (choice) {
+                case 0 -> printOptions();
                 case 1 -> addSongToAlbum();
                 case 2 -> removeSongFromAlbum();
                 case 3 -> addSongToPlaylist();
                 case 4 -> removeSongFromPlaylist();
-                case 5 -> playlist.replayTheSong(songListIterator);
-                case 6 -> playlist.skipToNextSong(songListIterator);
-                case 7 -> playlist.skipToPreviousSong(songListIterator);
-                case 8 -> listAlbum();
-                case 9 -> listPlaylist();
-                case 10 -> {
+                case 5 -> listAlbum();
+                case 6 -> listPlaylist();
+                case 7 -> playlist.playMusic(playlist.getPlaylists());
+                case 8 -> {
                     System.out.println("Thank you. Hope you enjoyed!!!");
                     System.exit(0);
                 }
@@ -40,17 +37,15 @@ public class Main {
     }
 
     private static void printOptions() {
+        System.out.println("0. Print option in the album");
         System.out.println("1. Add album song.");
         System.out.println("2. Remove album song.");
         System.out.println("3. Add an existing song to the playlist.");
         System.out.println("4. Remove a song from the playlist.");
-        System.out.println("5. Replay the song.");
-        System.out.println("6. Skip to next song.");
-        System.out.println("7. Skip to previous song.");
-        System.out.println("8. List the songs in the album.");
-        System.out.println("9. List the songs in the playlist.");
-        System.out.println("10. Exit");
-        System.out.print("Enter your choice: ");
+        System.out.println("5. List the songs in the album.");
+        System.out.println("6. List the songs in the playlist.");
+        System.out.println("7. Play music");
+        System.out.println("8. Exit");
     }
 
     public static void addSongToAlbum() {
@@ -89,7 +84,7 @@ public class Main {
                     " has been added to playlist");
         else
             System.out.println("Song with title: " + title + " & with duration: " + duration +
-                    " cannot be added to the playlist since, it does not exist in the album");
+                    " cannot be added to the playlist");
     }
 
     public static void removeSongFromPlaylist() {
