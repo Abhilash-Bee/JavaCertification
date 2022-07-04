@@ -2,7 +2,6 @@ package com.java_collections;
 
 
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Scanner;
 
 public class Main {
@@ -36,9 +35,8 @@ public class Main {
                 }
                 case 3 -> {
                     List list = theatre.getSeat();
-                    ListIterator listIterator = list.listIterator();
-                    while(listIterator.hasNext()) {
-                        System.out.println(listIterator.next().toString());
+                    for (Object o : list) {
+                        System.out.println(o.toString());
                     }
                 }
                 case 4 -> {
