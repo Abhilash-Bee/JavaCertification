@@ -1,7 +1,7 @@
 package com.java_collections;
 
 import java.util.ArrayList;
-import java.util.*;
+import java.util.List;
 
 public class Theatre {
 
