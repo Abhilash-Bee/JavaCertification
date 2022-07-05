@@ -11,25 +11,25 @@ public class Main {
             System.out.println(car.brake());
         }
 
-        Car car = new Car(4, "Base car");
-        System.out.println(car.startEngine());
-        System.out.println(car.accelerate());
-        System.out.println(car.brake());
-
-        Mitsubishi mitsubishi = new Mitsubishi(4, "Base car");
-        System.out.println(mitsubishi.startEngine());
-        System.out.println(mitsubishi.accelerate());
-        System.out.println(mitsubishi.brake());
-
-        Holden holden = new Holden(4, "Base car");
-        System.out.println(holden.startEngine());
-        System.out.println(holden.accelerate());
-        System.out.println(holden.brake());
-
-        Ford ford = new Ford(4, "Base car");
-        System.out.println(ford.startEngine());
-        System.out.println(ford.accelerate());
-        System.out.println(ford.brake());
+//        Car car = new Car(4, "Base car");
+//        System.out.println(car.startEngine());
+//        System.out.println(car.accelerate());
+//        System.out.println(car.brake());
+//
+//        Mitsubishi mitsubishi = new Mitsubishi(4, "Base car");
+//        System.out.println(mitsubishi.startEngine());
+//        System.out.println(mitsubishi.accelerate());
+//        System.out.println(mitsubishi.brake());
+//
+//        Holden holden = new Holden(4, "Base car");
+//        System.out.println(holden.startEngine());
+//        System.out.println(holden.accelerate());
+//        System.out.println(holden.brake());
+//
+//        Ford ford = new Ford(4, "Base car");
+//        System.out.println(ford.startEngine());
+//        System.out.println(ford.accelerate());
+//        System.out.println(ford.brake());
 
     }
 
