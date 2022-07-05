@@ -1,7 +1,6 @@
-package com.java_collections;
+package com.java_collections.example_2;
 
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -21,24 +20,19 @@ public class Main {
                     System.out.println("Enter the seat name: ");
                     String seatName = scanner.next();
                     if (theatre.reserveSeat(seatName))
-                        System.out.println(seatName + " is reserved at " + theatre.getName());
+                        System.out.println(seatName + " is reserved at " + theatre.getTheatreName());
                     else
-                        System.out.println(seatName + " cannot be reserved at " + theatre.getName());
+                        System.out.println(seatName + " cannot be reserved at " + theatre.getTheatreName());
                 }
                 case 2 -> {
                     System.out.println("Enter the seat name: ");
                     String seatName = scanner.next();
                     if (theatre.cancelReservedSeat(seatName))
-                        System.out.println(seatName + " reservation cancelled at " + theatre.getName());
+                        System.out.println(seatName + " reservation cancelled at " + theatre.getTheatreName());
                     else
-                        System.out.println(seatName + " cannot cancel reservation at " + theatre.getName());
+                        System.out.println(seatName + " cannot cancel reservation at " + theatre.getTheatreName());
                 }
-                case 3 -> {
-                    List list = theatre.getSeat();
-                    for (Object o : list) {
-                        System.out.println(o.toString());
-                    }
-                }
+                case 3 -> theatre.getSeats();
                 case 4 -> {
                     System.out.println("Thank you!!!");
                     System.exit(0);
@@ -51,10 +45,10 @@ public class Main {
 
     public static void printOptions() {
         System.out.println("===========================================================");
-        System.out.println("1. Reserve seat at " + theatre.getName() + ".");
-        System.out.println("2. Cancel reserved seat at " + theatre.getName() + ".");
+        System.out.println("1. Reserve seat at " + theatre.getTheatreName() + ".");
+        System.out.println("2. Cancel reserved seat at " + theatre.getTheatreName() + ".");
         System.out.println("3. List seats.");
-        System.out.println("4. Exit from " + theatre.getName() + ".");
+        System.out.println("4. Exit from " + theatre.getTheatreName() + ".");
         System.out.println("===========================================================");
         System.out.print("Enter your choice: ");
     }
