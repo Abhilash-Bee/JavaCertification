@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Main {
 
     private final Map<Integer, Location> locations = new HashMap<>();
+    private final Map<String, String> vocabulary = new HashMap<>();
 
     public Main() {
         locations.put(0, new Location(0, "You are sitting in front of a computer learning Java"));
@@ -34,7 +35,7 @@ public class Main {
 
     public void command() {
         Scanner scanner = new Scanner(System.in);
-        Map<String, String> vocabulary = new HashMap<>();
+
         vocabulary.put("north", "N");
         vocabulary.put("south", "S");
         vocabulary.put("east", "E");
