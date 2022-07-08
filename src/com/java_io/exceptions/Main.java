@@ -1,4 +1,4 @@
-package com.java_exceptions;
+package com.java_io.exceptions;
 
 public class Main {
 

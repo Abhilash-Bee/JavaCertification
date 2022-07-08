@@ -1,4 +1,4 @@
-package com.java_exceptions;
+package com.java_io.exceptions;
 
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
