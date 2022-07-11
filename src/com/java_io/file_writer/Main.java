@@ -10,9 +10,9 @@ public class Main {
 
     private static final Map<Integer, Location> locations = new HashMap<>();
     private static final Map<String, String> vocabulary = new HashMap<>();
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Map<String, Integer> tempExits = new HashMap<>();
         locations.put(0, new Location(0, "You are sitting in front of a computer learning Java", tempExits));
@@ -42,11 +42,9 @@ public class Main {
         tempExits.put("W", 2);
         locations.put(5, new Location(5, "You are in the forest", tempExits));
 
-        try {
-            FileWriter locFile = new FileWriter("location1.txt");
+        try (FileWriter locFile = new FileWriter("location1.txt")) {
             for (Location loc : locations.values())
                 locFile.write(loc.toString() + "\n");
-            locFile.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
